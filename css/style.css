@@ -1,0 +1,239 @@
+:root {
+    --bg-main: #1B262C;
+    --bg-form: #0F4C75;
+    --bg-list: #3282B8;
+    --bg-item-pendente: #BBE1FA;
+    --bg-item-concluido: #829CAD;
+    
+    --accent-yellow: #e7fc31;
+    --input-bg: #f9ffc5;
+    --warning-text: #FFFF00;
+    
+    --btn-danger: #dc2626;
+    --btn-danger-hover: #b91c1c;
+    --btn-neutral: #829CAD;
+    --btn-neutral-hover: #748b99;
+    
+    --text-dark: #000000;
+    --text-light: #ffffff;
+    --overlay-bg: rgba(0, 0, 0, 0.7);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+
+    --radius-sm: 5px;
+    --radius-md: 10px;
+    --radius-lg: 15px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+}
+
+li {
+    color: var(--text-dark);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+form {
+    width: 90%;
+    max-width: 500px;
+
+    background-color: var(--bg-form);
+    border-radius: var(--radius-md);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 0.5em 0;
+    font-size: clamp(1.8rem, 3vw + 1rem, 3rem);
+    color: var(--accent-yellow);
+}
+
+#taskInput {
+    width: 96%;
+    max-width: 470px;
+
+    font-size: 20px;
+    background-color: var(--input-bg);
+    color: var(--text-dark);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--text-dark);
+    caret-color: red;
+}
+
+.error {
+    visibility: hidden;
+    max-width: 100%;
+    width: 470px;
+    padding: 0.25rem;
+    color: var(--warning-text);
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.error.visible {
+    visibility: visible;
+}
+
+#taskInput:focus {
+    border: 1px solid var(--text-dark);
+    outline: 1px solid var(--accent-yellow);
+    outline-offset: 2px;
+    box-shadow: 0 0 5px var(--shadow-color);
+    background-color: var(--text-light);
+}
+
+.list-wrapper {
+    width: 100%;
+    max-width: 470px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 0.625rem;
+}
+
+ul {
+    width: 100%;
+    max-height: 555px;
+    overflow: auto;
+    list-style: none;
+    background-color: var(--bg-list);
+    padding: 0 0.625rem;
+}
+
+/* Scrollbar */
+ul::-webkit-scrollbar {
+    width: 6px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background-color: var(--accent-yellow);
+    border-radius: var(--radius-lg);
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-light);
+}
+
+.pending,
+.completed {
+    width: 100%;
+    padding: 0.625rem;
+    margin: 0.5rem 0;
+    font-weight: 400;
+    border-radius: var(--radius-md);
+
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    border: 1px solid transparent;
+}
+
+.pending {
+    background-color: var(--bg-item-pendente);
+}
+
+.completed {
+    background-color: var(--bg-item-concluido);
+    text-decoration: line-through;
+}
+
+.check,
+.delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5em;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.delete {
+    margin-left: auto;
+}
+
+.check img,
+.delete img,
+.undo img {
+    width: 20px;
+    height: 20px;
+}
+
+.pending span,
+.completed span {
+    min-width: 0;
+    overflow-wrap: anywhere; 
+}
+
+/* Modal de Confirmação */
+#confirmationModal {
+    margin: auto;
+    width: 100%;
+    max-width: 300px;
+
+    background-color: var(--bg-item-pendente);
+    border: 3px solid var(--bg-list);
+    border-radius: var(--radius-md);
+    padding: 0.625rem;
+}
+
+#confirmationModal[open] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#confirmationModal img {
+    width: 50px;
+}
+
+#confirmationModal::backdrop {
+    background-color: var(--overlay-bg);
+}
+
+div button {
+    color: var(--text-light);
+    padding: 0.313rem;
+    margin-top: 0.313rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    cursor: pointer; 
+}
+
+#confirmBtn {
+    background-color: var(--btn-danger);
+}
+
+#confirmBtn:hover {
+    background-color: var(--btn-danger-hover);
+}
+
+#cancelBtn {
+    background-color: var(--btn-neutral);
+}
+
+#cancelBtn:hover {
+    background-color: var(--btn-neutral-hover);
+}

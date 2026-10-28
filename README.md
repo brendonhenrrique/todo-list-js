@@ -4,7 +4,7 @@ Aplicação de gerenciamento de tarefas feita com **HTML, CSS e JavaScript puro*
 
 Este foi o meu primeiro projeto de JavaScript e faz parte do meu portfólio como desenvolvedor frontend.
 
-🔗 **Demo:** [link do deploy na Vercel]
+🔗 **Demo:** [Ver projeto online](https://todo-list-brendon.vercel.app/)
 
 | Desktop | Modal de confirmação | Mobile |
 |---------|----------------------|--------|

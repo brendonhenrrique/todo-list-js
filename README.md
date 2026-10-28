@@ -35,7 +35,7 @@ Este foi o meu primeiro projeto de JavaScript e faz parte do meu portfólio como
 - **Guard clauses:** retornos antecipados para validar o input e evitar erros com valores `null`.
 - **Acessibilidade:** `role="alert"`, `aria-describedby` e `aria-hidden` nas mensagens de erro e nos ícones decorativos.
 - **Elemento `<dialog>`:** `showModal()` e `close()`, além de guardar o estado entre dois cliques separados.
-- **Contexto seguro:** `crypto.randomUUID()` só funciona em HTTPS ou `localhost`. Para testar no celular, usei o ngrok.
+- **Contexto seguro:** `crypto.randomUUID()` só funciona em HTTPS ou `localhost`. Para testar no celular, usei o `ngrok`.
 
 ## 🚀 Como rodar o projeto
 
